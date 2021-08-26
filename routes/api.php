@@ -18,9 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get("/gener",'GenerController@GetGener');
-Route::get("/movies",'MoiveController@GetGener');
+Route::get("/movies",'MoiveController@GetMovies');
 Route::get("/get_movies",'MoiveController@ListMovies');
-Route::get("/sort_movies",'MoiveController@Sort');
 
 
 

@@ -10,7 +10,7 @@ use App\geners_movies;
 
 class MoiveController extends AppBaseController
 {
-        public function GetGener(){
+        public function GetMovies(){
             $curlSession = curl_init();
             curl_setopt($curlSession, CURLOPT_URL, $this->base_url.'movie/top_rated?api_key='.$this->api_key.'&page=1');
             curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
@@ -52,17 +52,5 @@ class MoiveController extends AppBaseController
             
             return $this->sendResponse($movies->toArray(), 'Movies retrieved successfully');
         }
-
-        // public function Sort(){
-        //      if (isset($_GET['rate'])&&!empty($_GET['rate'])) {
-        //          if ($_GET['rate']=='asc') {
-        //              $movies= Movie::orderBy("vote_average")->get();
-        //          }
-        //          if ($_GET['rate']=='desc') {
-        //              $movies= Movie::orderBy("vote_average", "desc")->get();
-        //          }
-        //      }
-        //     return $this->sendResponse($movies->toArray(), 'Movies retrieved successfully');
-
-        // }
+        
 }
